@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excursão ETIPS - Ganesha Adventure</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #00ff00;
+            line-height: 1.6;
+            padding: 20px;
+            background-image: radial-gradient(circle, #0d1b1e 0%, #000000 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #6A1B9A;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(106, 27, 154, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                #ff0000, #ff7f00, #ffff00, #00ff00, 
+                #0000ff, #4b0082, #9400d3);
+            background-size: 800% 800%;
+            animation: rainbow 5s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        h1, h2, h3 {
+            color: #00ff00;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 1px solid #6A1B9A;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #FFD700;
+            margin-top: 20px;
+        }
+
+        p, li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .agency-card {
+            background-color: rgba(20, 20, 20, 0.8);
+            border-left: 4px solid #00ff00;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .contest-card {
+            background-color: rgba(255, 105, 180, 0.1);
+            border-left: 4px solid #FF69B4;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .contest-rules {
+            margin-top: 15px;
+            padding-left: 20px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            min-width: 200px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        .btn-website {
+            background-color: #6A1B9A;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .testimonial {
+            background-color: rgba(255, 215, 0, 0.1);
+            border-left: 4px solid #FFD700;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        .warning {
+            color: #ff5555;
+            font-weight: bold;
+        }
+
+        .gov-badge {
+            display: inline-block;
+            background-color: #0a4c8c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>EXCURSÃO ETIPS <span class="highlight">GANESHA ADVENTURE</span></h1>
+        
+        <!-- SEÇÃO DO CONCURSO DE AGITADORES -->
+        <div class="contest-card">
+            <h2>🏆 CONCURSO: MELHOR AGITADOR</h2>
+            <p>Vamos premiar quem trouxer mais gente para a excursão!</p>
+            
+            <div class="contest-rules">
+                <h3>📌 COMO FUNCIONA:</h3>
+                <ul>
+                    <li>1️⃣ Você precisa trazer <span class="highlight">NO MÍNIMO 5 PESSOAS DA ETIPS</span> que se inscrevam na excursão</li>
+                    <li>2️⃣ Suas "recrutas" devem confirmar seu nome como indicador</li>
+                    <li>3️⃣ Será aberta uma enquete no Instagram <span class="highlight">@lord_anonim0</span> que durará <span class="highlight">3 dias</span></li>
+                    <li>4️⃣ O mais votado na enquete ganha <span class="highlight">INGRESSO PARA O HOPI HARI</span></li>
+                </ul>
+                <p class="highlight">📢 Todas as informações sobre como participar estão no nosso Instagram!</p>
+            </div>
+        </div>
+        
+        <div class="agency-card">
+            <h2>🚍 SOBRE A AGÊNCIA</h2>
+            <p>A <span class="highlight">Ganesha Adventure</span> é uma das agências mais conceituadas no mercado de excursões, com mais de <span class="highlight">10 anos de experiência</span> em viagens escolares e turismo de aventura.</p>
+            
+            <h3>⭐ POR QUE ESCOLHEMOS A GANESHA?</h3>
+            <ul>
+                <li>✅ Ônibus <span class="highlight">Double-Deck</span> exclusivo (61 lugares)</li>
+                <li>✅ <span class="highlight">2 monitores profissionais</span> + 1 monitor de polícia</li>
+                <li>✅ <span class="highlight">Seguro-viagem</span> incluso para todos</li>
+                <li>✅ Nota <span class="highlight">4.9/5</span> no Reclame Aqui</li>
+                <li>✅ Veículos com <span class="highlight">ar-condicionado, Wi-Fi e banheiro</span></li>
+            </ul>
+            
+            <div class="testimonial">
+                <p>"Viajei com a Ganesha para o Hopi Hari e foi perfeito! Ônibus novíssimo, monitores atenciosos e tudo muito organizado."</p>
+                <p>- Larissa S., cliente desde 2022</p>
+            </div>
+        </div>
+        
+        <h2>📞 CONTATOS OFICIAIS</h2>
+        <div class="contact-buttons">
+            <a href="https://www.instagram.com/ganeshaadventure" class="btn btn-instagram">
+                <i class="fab fa-instagram"></i> Instagram Ganesha
+            </a>
+            
+            <a href="https://ganeshaadventure.lojaintegrada.com.br" class="btn btn-website">
+                <i class="fas fa-globe"></i> Site Oficial
+            </a>
+            
+            <a href="https://api.whatsapp.com/send?phone=5511933293088" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+        
+        <h2>📅 INFORMAÇÕES DA EXCURSÃO</h2>
+        <h3>💳 FORMA DE PAGAMENTO</h3>
+        <ol>
+            <li>Você receberá um <span class="highlight">link exclusivo</span> da Ganesha</li>
+            <li>Pagamento via <span class="highlight">PIX</span> (sem taxa) ou <span class="highlight">cartão</span> (com acréscimo)</li>
+            <li>Após pagamento, receberá o <span class="highlight">contrato digital</span> por e-mail</li>
+        </ol>
+        
+        <h3>📝 DOCUMENTAÇÃO</h3>
+        <ul>
+            <li><span class="highlight">Menores de 17 anos:</span> 
+                Autorização pode ser reconhecida <span class="highlight">ONLINE</span> via:
+                <br>
+                <a href="https://www.gov.br/pt-br/servicos/reconhecer-firma-em-cartorio" class="gov-badge">
+                    <i class="fas fa-external-link-alt"></i> App Gov.br
+                </a>
+            </li>
+            <li><span class="highlight">17-18 anos:</span> Declaração de ciência online (modelo fornecido)</li>
+        </ul>
+        
+        <h3>🎢 O QUE ESTÁ INCLUSO?</h3>
+        <ul>
+            <li>Transporte ida e volta</li>
+            <li>Ingresso para o Hopi Hari</li>
+            <li>Monitoria profissional</li>
+            <li>Seguro-viagem</li>
+        </ul>
+        
+        <div class="testimonial">
+            <p class="warning">IMPORTANTE: Para mais informações sobre o concurso, siga @lord_anonim0 no Instagram!</p>
+        </div>
+    </div>
+
+    <script>
+        // Efeito de digitação no título
+        const title = document.querySelector('h1');
+        const originalText = title.innerText;
+        title.innerText = '';
+        
+        let i = 0;
+        const typingEffect = setInterval(() => {
+            if (i < originalText.length) {
+                title.innerText += originalText.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingEffect);
+            }
+        }, 100);
+    </script>
+</body>
+</html>
